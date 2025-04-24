@@ -39,7 +39,7 @@ public class GestorEstudiantes {
         }
 
 
-        return mejor; // Error si la lista está vacía
+        return mejor; // Error si la lista está vacía.
     }
 
     // Guarda los resultados en un fichero
