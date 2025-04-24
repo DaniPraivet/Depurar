@@ -21,6 +21,15 @@ public class GestorEstudiantes {
         Estudiante mejor = null;
         double mejorNota = -1;
 
+        try {
+            if (estudiantes.length == 0) {
+                throw new NullPointerException();
+            }
+        } catch (NullPointerException e) {
+            System.out.println("No debes introducir un array de estudiantes vacío.");
+            return new Estudiante("",0,new double[]{});
+        }
+
         for (Estudiante estudiante : estudiantes) {
             double media = calcularNotaMedia(estudiante); // Posible fallo aquí
             if (media > mejorNota) {
@@ -28,6 +37,8 @@ public class GestorEstudiantes {
                 mejor = estudiante;
             }
         }
+
+
         return mejor; // Error si la lista está vacía
     }
 
